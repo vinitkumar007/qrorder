@@ -29,7 +29,7 @@ server:
         same-site: lax
 app:
   # QR ke andar yehi base URL jayega. Phone se test: http://<laptop-LAN-IP>:8080 ; production: https://tumhara-domain
-  public-base-url: ${PUBLIC_BASE_URL:http://localhost:8080}
+  public-base-url: ${PUBLIC_BASE_URL:https://qrorder-88l0.onrender.com}
   timezone: ${APP_TIMEZONE:Asia/Kolkata}
   upload-dir: ${UPLOAD_DIR:uploads}
   bootstrap:
