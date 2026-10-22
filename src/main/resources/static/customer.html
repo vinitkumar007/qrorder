@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Table order</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="cust nobar">
+  <header class="plate-hero">
+    <div class="plate"><small>Table</small><b id="tableNo">–</b></div>
+    <div>
+      <h1 id="restName" class="rest">Swagat hai</h1>
+      <p class="hero-copy">Jo pasand aaye chun lo. Order seedha rasoi tak jayega.</p>
+      <button id="billBtn" class="ghost sm">Mera bill</button>
+    </div>
+  </header>
+  <div class="filters">
+    <input id="search" type="search" placeholder="Dish dhundo…" aria-label="Dish dhundo" autocomplete="off">
+    <label class="chk"><input type="checkbox" id="vegOnly"> Sirf veg</label>
+  </div>
+  <nav id="chips" class="chips" aria-label="Menu sections"></nav>
+  <main id="menu" class="menu"><p class="empty">Menu aa raha hai…</p></main>
+
+  <div id="cartBar" class="cartbar hidden">
+    <button id="openCart"><span id="cartCount"></span><span>Order dekho</span><span id="cartTotal"></span></button>
+  </div>
+  <button id="waiterFab" class="fab">Waiter bulao</button>
+
+  <div id="cartSheet" class="sheet hidden" data-close>
+    <div class="sheet-body">
+      <h2>Aapka order</h2>
+      <div id="cartLines"></div>
+      <div class="sum"><span>Total</span><span id="sumTotal"></span></div>
+      <textarea id="note" maxlength="200" placeholder="Koi khaas baat? (kam teekha, bina pyaaz…)"></textarea>
+      <button id="placeBtn" class="primary">Order bhejo</button>
+    </div>
+  </div>
+
+  <div id="waiterSheet" class="sheet hidden" data-close>
+    <div class="sheet-body">
+      <h2>Waiter ko kya batana hai?</h2>
+      <div class="reasons">
+        <button data-reason="GENERAL">Waiter bulao</button>
+        <button data-reason="WATER">Paani chahiye</button>
+        <button data-reason="BILL">Bill chahiye</button>
+        <button data-reason="HELP">Madad chahiye</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="billSheet" class="sheet hidden" data-close>
+    <div class="sheet-body">
+      <h2>Mera bill</h2>
+      <div id="billBody"></div>
+      <button class="primary" data-reason="BILL">Waiter se bill mangao</button>
+    </div>
+  </div>
+
+  <div id="tracker" class="sheet hidden">
+    <div class="sheet-body">
+      <h2>Aapka order</h2>
+      <ol id="trackBody" class="steps"></ol>
+      <button id="trackClose" class="primary">Aur order karo</button>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/customer.js"></script>
+</body>
+</html>

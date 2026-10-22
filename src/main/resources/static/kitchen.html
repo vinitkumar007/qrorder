@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rasoi screen</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="kit">
+  <div id="overlay" class="overlay">
+    <div>
+      <h1>Rasoi screen</h1>
+      <p class="muted">Order aur waiter ki awaaz chalu karne ke liye ek baar dabao.</p>
+      <button id="start" class="primary big">Kitchen mode shuru karo</button>
+    </div>
+  </div>
+  <header class="kbar">
+    <h1>Rasoi</h1>
+    <span id="conn" class="conn">connect ho raha hai…</span>
+    <button id="mute" class="ghost">Awaaz band karo</button>
+    <button id="logout" class="ghost">Logout</button>
+  </header>
+  <section id="calls" class="calls" aria-live="polite"></section>
+  <main id="board" class="board" aria-live="polite"></main>
+  <script src="/js/common.js"></script>
+  <script src="/js/kitchen.js"></script>
+</body>
+</html>

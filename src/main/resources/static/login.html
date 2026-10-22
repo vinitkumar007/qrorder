@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Staff login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login">
+  <form class="loginbox" method="post" action="/login">
+    <div class="plate"><small>Staff</small><b>Login</b></div>
+    <p id="err" class="err hidden">Username/password galat hai, ya 5 galat koshish ke baad account 10 minute ke liye band hai.</p>
+    <label>Username <input name="username" autocomplete="username" required autofocus></label>
+    <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+    <input type="hidden" name="_csrf" id="csrf">
+    <button class="primary" type="submit">Andar aao</button>
+  </form>
+  <script src="/js/common.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Waiter screen</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="kit">
+  <div id="overlay" class="overlay">
+    <div>
+      <h1>Waiter screen</h1>
+      <p class="muted">Waiter call aur "order taiyaar hai" ki awaaz ke liye ek baar dabao.</p>
+      <button id="start" class="primary big">Shuru karo</button>
+    </div>
+  </div>
+  <header class="kbar">
+    <h1>Waiter</h1>
+    <span id="conn" class="conn">connect ho raha hai…</span>
+    <button id="mute" class="ghost">Awaaz band karo</button>
+    <button id="logout" class="ghost">Logout</button>
+  </header>
+  <section id="calls" class="calls" aria-live="polite"></section>
+  <p id="receiptBanner" class="banner hidden"></p>
+  <h2 class="sec">Parosne ke liye taiyaar</h2>
+  <main id="ready" class="board" aria-live="polite"></main>
+  <h2 class="sec">Bill aur payment</h2>
+  <main id="bills" class="board"></main>
+  <script src="/js/common.js"></script>
+  <script src="/js/waiter.js"></script>
+</body>
+</html>

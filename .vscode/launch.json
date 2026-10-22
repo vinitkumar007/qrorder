@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Hotel QR (local)",
+      "request": "launch",
+      "mainClass": "com.hotel.qrorder.QrorderApplication",
+      "projectName": "qrorder",
+      "env": {
+        "DB_PASSWORD": "vini@07",
+        "PUBLIC_BASE_URL": "http://localhost:8080"
+      }
+    }
+  ]
+}

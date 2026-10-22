@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-page">
+  <header class="abar">
+    <h1>Admin</h1>
+    <span class="tabs">
+      <button id="tabTables" class="on">Tables aur QR</button>
+      <button id="tabMenu">Menu</button>
+      <button id="tabReports">Reports</button>
+      <button id="tabStaff">Staff</button>
+      <button id="tabSettings">Settings</button>
+    </span>
+    <a href="/kitchen.html" class="linkbtn">Rasoi</a>
+    <a href="/waiter.html" class="linkbtn">Waiter</a>
+    <button id="logout" class="ghost">Logout</button>
+  </header>
+
+  <section id="panelTables" class="wrap">
+    <form id="tableForm" class="formrow noprint">
+      <input id="tableNumber" type="number" min="1" max="999" placeholder="Table number" required>
+      <button class="primary" type="submit">Table jodo</button>
+      <button class="ghost" type="button" id="printBtn">Sab QR print karo</button>
+    </form>
+    <div id="tables" class="qrgrid"></div>
+  </section>
+
+  <section id="panelMenu" class="wrap hidden">
+    <h2 class="h2">Categories</h2>
+    <div id="cats" class="chipsrow"></div>
+    <form id="catForm" class="formrow">
+      <input id="catName" placeholder="Nayi category (jaise Desserts)" maxlength="80" required>
+      <button class="primary" type="submit">Category jodo</button>
+    </form>
+
+    <h2 class="h2" id="formTitle">Nayi dish</h2>
+    <form id="menuForm" class="formrow">
+      <select id="mCat" required></select>
+      <input id="mName" placeholder="Dish ka naam" maxlength="120" required>
+      <input id="mDesc" placeholder="Chhota description" maxlength="500">
+      <input id="mPrice" type="number" min="0" step="1" placeholder="Price (₹)" required>
+      <select id="mVeg"><option value="true">Veg</option><option value="false">Non-veg</option></select>
+      <label class="filebtn">Photo upload<input id="mFile" type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+      <input id="mImg" placeholder="ya photo ka https:// link" maxlength="500">
+      <img id="mPreview" class="preview hidden" alt="">
+      <button id="mSubmit" class="primary" type="submit">Dish jodo</button>
+      <button id="mCancel" class="ghost hidden" type="button">Edit rok do</button>
+    </form>
+    <table><thead><tr><th>Dish</th><th>Category</th><th>Price</th><th></th></tr></thead><tbody id="menuRows"></tbody></table>
+  </section>
+
+  <section id="panelReports" class="wrap hidden">
+    <div class="formrow">
+      <select id="repDays"><option value="7">Pichle 7 din</option><option value="30">Pichle 30 din</option></select>
+      <button id="repReload" class="ghost" type="button">Refresh</button>
+    </div>
+    <div id="reports"></div>
+  </section>
+
+  <section id="panelStaff" class="wrap hidden">
+    <h2 class="h2">Staff jodo</h2>
+    <form id="staffForm" class="formrow">
+      <input id="sUser" placeholder="Username" minlength="3" maxlength="40" autocomplete="off" required>
+      <input id="sPass" type="password" placeholder="Password (kam se kam 8 akshar)" minlength="8" maxlength="72" autocomplete="new-password" required>
+      <select id="sRole"><option value="WAITER">Waiter</option><option value="KITCHEN">Kitchen</option><option value="ADMIN">Admin</option></select>
+      <button class="primary" type="submit">Jodo</button>
+    </form>
+    <table><thead><tr><th>Username</th><th>Role</th><th></th></tr></thead><tbody id="staffRows"></tbody></table>
+    <h2 class="h2">Mera password badlo</h2>
+    <form id="pwForm" class="formrow">
+      <input id="pwCur" type="password" placeholder="Purana password" autocomplete="current-password" required>
+      <input id="pwNew" type="password" placeholder="Naya password (8+)" minlength="8" maxlength="72" autocomplete="new-password" required>
+      <button class="primary" type="submit">Badlo</button>
+    </form>
+  </section>
+
+  <section id="panelSettings" class="wrap hidden">
+    <h2 class="h2">Restaurant settings</h2>
+    <form id="setForm" class="formrow">
+      <input id="setName" placeholder="Restaurant ka naam" maxlength="60" required>
+      <input id="setGst" type="number" min="0" max="28" step="0.01" placeholder="GST %" required>
+      <input id="setSvc" type="number" min="0" max="20" step="0.01" placeholder="Service charge %" required>
+      <button class="primary" type="submit">Save</button>
+    </form>
+    <p class="muted">GST aur service charge har naye bill pe lagega. Purani receipts nahi badlengi.</p>
+  </section>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
