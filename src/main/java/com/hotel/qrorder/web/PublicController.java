@@ -31,7 +31,7 @@ public class PublicController {
 
     private DiningTable table(String token) {
         return tables.findByQrTokenAndActiveTrue(token)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "QR code sahi nahi hai,dubara kosis kro"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "QR code sahi nahi h,dubara try kro"));
     }
 
     @GetMapping("/menu")
