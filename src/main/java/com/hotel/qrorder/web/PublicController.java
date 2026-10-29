@@ -31,7 +31,7 @@ public class PublicController {
 
     private DiningTable table(String token) {
         return tables.findByQrTokenAndActiveTrue(token)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "QR code sahi nahi hai"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "QR code sahi nahi hai,dubara kosis kro"));
     }
 
     @GetMapping("/menu")
@@ -43,14 +43,14 @@ public class PublicController {
         }
         List<Dto.CategoryMenu> cats = grouped.entrySet().stream()
                 .map(e -> new Dto.CategoryMenu(e.getKey(), e.getValue())).toList();
-        return new Dto.MenuResponse(settings.get("restaurant_name", "Hotel Rasoi"), t.getTableNumber(), cats);
+        return new Dto.MenuResponse(settings.get("restaurant_name", "Hotel_Rasoi"), t.getTableNumber(), cats);
     }
 
     @PostMapping("/orders")
     public Map<String, Object> placeOrder(@PathVariable String token, @Valid @RequestBody Dto.OrderRequest req) {
         DiningTable t = table(token);
         if (!limiter.allow("order:" + t.getId(), 5, 60_000)) {
-            throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, "Thoda ruko, bahut saare orders ek saath ho gaye");
+            throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, "Thoda ruko, bahut saare orders ek saath ho gaye,jldi krne ki kosis krte h ");
         }
         OrderEntity o = orders.place(t, req);
         live.publish("NEW_ORDER", OrderService.view(o));
