@@ -5,7 +5,7 @@ import java.util.Base64;
 
 public final class TokenUtil {
     private static final SecureRandom RANDOM = new SecureRandom();
-    private static final String ALNUM = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    private static final String ALNUM = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ234567890";
 
     private TokenUtil() {}
 
